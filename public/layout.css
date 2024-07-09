@@ -1,0 +1,63 @@
+:root {
+	height: 100%;
+	overflow: hidden;
+}
+
+[data-layout] {
+	--layout-content-top: 40px;
+	--layout-content-bottom: 25px;
+	container-name: layout;
+	container-type: size;
+	min-height: 100%;
+	position: relative;
+}
+
+[data-layout-content] {
+	margin-top: var(--layout-content-top);
+	margin-bottom: var(--layout-content-bottom);
+	overflow: scroll;
+	transition: all 0.5s;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+[data-menu] {
+	--menu-action-mobile: 50px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	height: var(--layout-content-top);
+	width: 100%;
+	transition: all 0.5s ease-out 0.25s;
+	z-index: 1;
+}
+
+[data-status-bar] {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	height: var(--layout-content-bottom);
+}
+
+@container layout (max-width: 400px) {
+	[data-layout-content] {
+		--layout-content-top: 0px;
+	}
+
+	[data-menu] {
+		--menu-gutter-mobile: 10px;
+		top: calc(
+			100% - var(--layout-content-bottom) - var(--menu-action-mobile) - var(--menu-gutter-mobile)
+		);
+		left: calc(100% - var(--menu-action-mobile) - var(--menu-gutter-mobile));
+		right: var(--menu-gutter-mobile);
+		width: var(--menu-action-mobile);
+		height: var(--menu-action-mobile);
+		transition-timing-function: ease-in;
+	}
+}

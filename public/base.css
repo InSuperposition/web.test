@@ -1,0 +1,51 @@
+*::before,
+*,
+*::after {
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 16px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-synthesis: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+
+	line-height: 1.15;
+}
+body {
+	margin: 0;
+}
+
+h1 {
+	font-size: 2em;
+	margin: 0;
+}
+
+h2 {
+	font-size: 1.8em;
+	margin: 0;
+}
+
+h3 {
+	font-size: 1.6em;
+	margin: 0;
+}
+
+h4 {
+	font-size: 1.4em;
+	margin: 0;
+}
+
+h5 {
+	font-size: 1.2em;
+	margin: 0;
+}
+
+h6 {
+	font-size: 1em;
+	margin: 0;
+}

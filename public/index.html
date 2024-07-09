@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- <base href="http://127.0.0.1/" /> -->
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="height=height-width, width=device-width, initial-scale=1" />
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<title>HTML Elements and Attributes</title>
+		<link rel="stylesheet" type="text/css" href="./base.css" />
+		<link rel="stylesheet" type="text/css" href="./layout.css" />
+
+		<style>
+			/* Inline styles */
+			body {
+				font-family: Arial, sans-serif;
+			}
+		</style>
+		<script>
+			// Inline script
+			console.log('HTML Elements and Attributes Test');
+		</script>
+	</head>
+
+	<body data-layout id="body">
+		<nav data-menu>
+			<a href="#section-one" target="_self" rel="nofollow">Go to Section 1</a>
+			<a href="#section-two" target="_self" rel="nofollow">Go to Section 2</a>
+		</nav>
+		<div data-layout-content>
+			<!-- Content sectioning -->
+			<address id="address">
+				123 Example St.<br />
+				City, Country<br />
+				12345-67890
+			</address>
+			<article id="article">
+				<h3>Article Heading</h3>
+				<h4>Subheading</h4>
+				<p>Article content goes here...</p>
+			</article>
+			<aside id="aside">
+				<p>Status bar content</p>
+			</aside>
+			<footer id="footer">
+				<p>footer &copy; 2024</p>
+			</footer>
+			<header id="header">
+				Header
+				<h1>HTML Elements</h1>
+				<p>
+					This document contains a comprehensive list of HTML elements and their specific attributes
+					for testing browser styles.
+				</p>
+			</header>
+			<h1 id="h1">h1</h1>
+			<h2 id="h2">h2</h2>
+			<h3 id="h3">h3</h3>
+			<h4 id="h4">h4</h4>
+			<h5 id="h5">h5</h5>
+			<h6 id="h6">h6</h6>
+			<hgroup id="hgroup">
+				<h3>HGroup Heading</h3>
+				<h4>Subheading</h4>
+			</hgroup>
+			<main id="main">
+				<h2>Section 1</h2>
+				<p>Represents a section in a document.</p>
+			</main>
+			<nav id="nav">
+				<a href="#section-one" target="_self" rel="nofollow">Go to Section 1</a>
+				<a href="#section-two" target="_self" rel="nofollow">Go to Section 2</a>
+			</nav>
+			<section id="section">
+				<h2>Section</h2>
+				<p>Represents a section in a document.</p>
+			</section>
+			<div style="display: none">
+				<!-- Text content -->
+				<blockquote id="blockquote" cite="https://example.com">
+					<p>Example blockquote</p>
+				</blockquote>
+				<dl id="dl">
+					<dt id="dt">Definition Term</dt>
+					<dd id="dd">Definition Description</dd>
+				</dl>
+				<div id="div">
+					<hr id="hr" />
+					<p id="p">Paragraph text</p>
+					<pre id="pre">
+            <code>
+                function example() {
+                    return 'This is a code block';
+                }
+            </code>
+        </pre>
+				</div>
+				<ol id="ol">
+					<li>Ordered item 1</li>
+					<li>Ordered item 2</li>
+				</ol>
+				<ul id="ul">
+					<li>Unordered item 1</li>
+					<li>Unordered item 2</li>
+				</ul>
+				<!-- Inline text semantics -->
+				<abbr id="abbr" title="Abbreviation">abbr</abbr>
+				<b id="b">Bold text</b>
+				<bdi id="bdi">Bidirectional Isolation</bdi>
+				<span><bdo id="bdo" dir="rtl">This text will be displayed right-to-left.</bdo></span>
+				<cite id="cite">Citation Text</cite>
+				<code id="code">console.log('Hello, World!');</code>
+				<data id="data" value="123456">Product 123456</data>
+				<dfn id="dfn">Definition Term</dfn>
+				<em id="em">Emphasized text</em>
+				<i id="i">Italic text</i>
+				<kbd id="kbd">Keyboard input</kbd>
+				<mark id="mark">Highlighted text</mark>
+				<q id="q" cite="https://example.com">Example quote</q>
+				<s id="s">Strikethrough text</s>
+				<samp id="samp">Sample output from a computer program</samp>
+				<small id="small">Small text</small>
+				<span id="span">Inline text</span>
+				<strong id="strong">Strong text</strong>
+				<sub id="sub">Subscript text</sub>
+				<sup id="sup">Superscript text</sup>
+				<time id="time" datetime="2024-07-09">July 9, 2024</time>
+				<u id="u">Underlined text</u>
+				<var id="var">Variable</var>
+
+				<!-- Image and multimedia -->
+				<figure id="figure">
+					<img src="image.jpg" alt="Example Image" width="300" height="200" />
+					<figcaption id="figcaption">Figure Caption</figcaption>
+				</figure>
+				<img id="img" src="image2.jpg" alt="Example Image" width="300" height="200" />
+				<picture id="picture">
+					<source id="source" srcset="image.webp" type="image/webp" />
+					<img src="image.jpg" alt="Example Image" />
+				</picture>
+				<video id="video" controls width="300">
+					<source src="movie.mp4" type="video/mp4" />
+					Your browser does not support the video tag.
+				</video>
+				<audio id="audio" controls>
+					<source src="audio.mp3" type="audio/mp3" />
+					Your browser does not support the audio element.
+				</audio>
+
+				<!-- Embedded content -->
+				<embed id="embed" src="movie.swf" width="400" height="300" />
+				<iframe id="iframe" src="https://example.com" width="300" height="200"
+					>Your browser does not support iframes.</iframe
+				>
+				<object id="object" data="movie.mp4" type="video/mp4" width="400" height="300">
+					<param id="param" name="autoplay" value="true" />
+				</object>
+
+				<!-- Scripting -->
+				<canvas id="canvas" width="200" height="100"
+					>Your browser does not support the canvas element.</canvas
+				>
+				<noscript id="noscript">Your browser does not support JavaScript!</noscript>
+				<script id="script">
+					console.log('Script executed');
+				</script>
+
+				<!-- Demarcating edits -->
+				<del id="del">Deleted text</del>
+				<ins id="ins">Inserted text</ins>
+				<!-- Table content -->
+				<table id="table" border="1">
+					<caption id="caption">
+						Example Table
+					</caption>
+					<colgroup id="colgroup">
+						<col id="col" />
+						<col />
+					</colgroup>
+					<thead id="thead">
+						<tr id="tr">
+							<th id="th">Header 1</th>
+							<th>Header 2</th>
+						</tr>
+					</thead>
+					<tbody id="tbody">
+						<tr>
+							<td id="td">Row 1, Cell 1</td>
+							<td>Row 1, Cell 2</td>
+						</tr>
+					</tbody>
+					<tfoot id="tfoot">
+						<tr>
+							<td>Footer Cell 1</td>
+							<td>Footer Cell 2</td>
+						</tr>
+					</tfoot>
+				</table>
+
+				<!-- Forms -->
+				<form id="form" action="/submit" method="post" enctype="multipart/form-data">
+					<fieldset id="fieldset">
+						<legend id="legend">Form Legend</legend>
+						<label id="label" for="name">Name:</label>
+						<input id="input" type="text" name="name" required />
+						<input type="button" value="Button" />
+						<input type="checkbox" name="checkbox" />
+						<input type="color" name="color" />
+						<input type="date" name="date" />
+						<input type="datetime-local" name="datetime-local" />
+						<input type="email" name="email" />
+						<input type="file" name="file" />
+						<input type="hidden" name="hidden" />
+						<input type="image" src="submit.png" alt="Submit" />
+						<input type="month" name="month" />
+						<input type="number" name="number" />
+						<input type="password" name="password" />
+						<input type="radio" name="radio" />
+						<input type="range" name="range" />
+						<input type="reset" value="Reset" />
+						<input type="search" name="search" />
+						<input type="submit" value="Submit" />
+						<input type="tel" name="tel" />
+						<input type="text" name="text" />
+						<input type="time" name="time" />
+						<input type="url" name="url" />
+						<input type="week" name="week" />
+						<textarea id="textarea" rows="4" cols="50">Sample text</textarea>
+						<button id="button" type="button">Click Me</button>
+						<select id="select" name="select">
+							<option value="1">Option 1</option>
+							<option value="2">Option 2</option>
+						</select>
+					</fieldset>
+				</form>
+
+				<!-- Interactive elements -->
+				<details id="details">
+					<summary id="summary">More Info</summary>
+					<p>Additional details about HTML elements.</p>
+				</details>
+				<!-- <dialog id="dialog" open>This is an open dialog window</dialog> -->
+
+				<!-- Web components -->
+				<!-- <slot id="slot">Default content</slot>
+    <template id="template">
+      <p>Template content</p>
+    </template> -->
+				<button popovertarget="my-popover">Open Popover</button>
+
+				<div popover id="my-popover">Greetings, one and all!</div>
+			</div>
+		</div>
+		<div data-status-bar>Status bar content</div>
+	</body>
+</html>

@@ -20,9 +20,11 @@ input:where(
 		[type='week']
 	) {
 	color: #4b4b4b;
+	height: 1.5em;
 	padding: 1px 6px;
 }
 input:where([type='button'], [type='reset'], [type='submit'], ) {
+	height: 1.25em;
 	padding: 1px 6px;
 }
 input[type='color'] {

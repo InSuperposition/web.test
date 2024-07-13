@@ -24,18 +24,18 @@ input[type='radio'] {
 }
 
 input[type='radio']::before {
+	--radio-checked-dimensions: calc(var(--radio-dimensions) + (2 * var(--radio-border)));
 	display: block;
 	content: '⬤';
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	transform: translate(0%, 0%) scale(0);
 	transform-origin: center;
 	transition: all 0.3s;
+	transform: translate(-0.109375em, -0.15625em) scale(0);
+
+	/* Safari, prevent transition from clipping */
+	width: var(--radio-checked-dimensions);
+	height: var(--radio-checked-dimensions);
 }
 
 input[type='radio']:checked::before {
-	transform: translate(-8%, -12%) scale(65%);
+	transform: translate(-0.109375em, -0.15625em) scale(0.5);
 }

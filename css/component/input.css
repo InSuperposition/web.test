@@ -1,6 +1,6 @@
 label {
 	cursor: pointer;
-	display: inline-block;
+	/* display: inline-block; */
 	/* &:has(input[type='radio']) {
 		border: 1px solid gray;
 	} */

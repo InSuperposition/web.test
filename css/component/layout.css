@@ -25,7 +25,6 @@
 }
 
 [data-menu] {
-	--menu-action-mobile: 50px;
 	position: fixed;
 	top: 0px;
 	left: 0px;
@@ -33,7 +32,6 @@
 	height: var(--layout-content-top);
 	width: 100%;
 	transition: all 0.5s ease-out 0.25s;
-	z-index: 1;
 }
 
 [data-status-bar] {
@@ -50,14 +48,15 @@
 	}
 
 	[data-menu] {
-		--menu-gutter-mobile: 10px;
+		--menu-dimension: 50px;
+		--menu-end-end-gutter: 10px;
 		top: calc(
-			100% - var(--layout-content-bottom) - var(--menu-action-mobile) - var(--menu-gutter-mobile)
+			100% - var(--layout-content-bottom) - var(--menu-dimension) - var(--menu-end-end-gutter)
 		);
-		left: calc(100% - var(--menu-action-mobile) - var(--menu-gutter-mobile));
-		right: var(--menu-gutter-mobile);
-		width: var(--menu-action-mobile);
-		height: var(--menu-action-mobile);
+		left: calc(100% - var(--menu-dimension) - var(--menu-end-end-gutter));
+		right: var(--menu-end-end-gutter);
+		width: var(--menu-dimension);
+		height: var(--menu-dimension);
 		transition-timing-function: ease-in;
 	}
 }

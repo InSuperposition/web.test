@@ -1,0 +1,10 @@
+@import url(element/html.css);
+@import url(element/body.css);
+@import url(element/button.css);
+@import url(element/h.css);
+@import url(element/input.css);
+
+@import url(component/input.css);
+#forms {
+	margin: 25px;
+}

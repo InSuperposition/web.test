@@ -1,0 +1,41 @@
+input {
+	font: inherit;
+	margin: 0;
+}
+input:where([type='search'], [type='checkbox'], [type='radio']) {
+	appearance: none;
+	box-sizing: inherit;
+}
+
+input[type='color'] {
+	border: 0;
+	padding: 0;
+}
+input[type='radio'] {
+	--radio-dimensions: 1em;
+	--radio-border: calc(0.125 * var(--radio-dimensions));
+
+	width: var(--radio-dimensions);
+	height: var(--radio-dimensions);
+	border-radius: 50%;
+	border: var(--radio-border) solid gray;
+	position: relative;
+	overflow: clip;
+}
+
+input[type='radio']::before {
+	display: block;
+	content: '⬤';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transform: translate(0%, 0%) scale(0);
+	transform-origin: center;
+	transition: all 0.3s;
+}
+
+input[type='radio']:checked::before {
+	transform: translate(-8%, -12%) scale(65%);
+}

@@ -1,0 +1,13 @@
+html {
+	font-size: 16px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-synthesis: none;
+
+	line-height: 1.15;
+
+	text-rendering: optimizeLegibility;
+	text-size-adjust: 100%;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

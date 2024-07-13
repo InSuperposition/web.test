@@ -20,12 +20,12 @@ input:where(
 		[type='week']
 	) {
 	color: #4b4b4b;
-	height: 1.5em;
-	padding: 1px 6px;
+	height: 1.75em;
+	padding: 0.0625em 0.375em;
 }
 input:where([type='button'], [type='reset'], [type='submit'], ) {
-	height: 1.25em;
-	padding: 1px 6px;
+	height: 1.5em;
+	padding: 0.0625em 0.375em;
 }
 input[type='color'] {
 	border: 0;

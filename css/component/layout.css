@@ -16,7 +16,7 @@
 	margin-top: var(--layout-content-top);
 	margin-bottom: var(--layout-content-bottom);
 	overflow: scroll;
-	transition: all 0.5s;
+	transition: margin-top 0.5s ease-in-out 0s;
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -31,7 +31,7 @@
 	right: 0px;
 	height: var(--layout-content-top);
 	width: 100%;
-	transition: all 0.5s ease-out 0.25s;
+	transition: auto 0.5s ease-out 0.25s;
 }
 
 [data-status-bar] {

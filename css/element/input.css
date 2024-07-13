@@ -1,6 +1,11 @@
 input {
 	font: inherit;
 	margin: 0;
+
+	/* &::before,
+	&::after {
+		margin: auto;
+	} */
 }
 input:where([type='search'], [type='checkbox'], [type='radio']) {
 	appearance: none;
@@ -20,22 +25,56 @@ input[type='radio'] {
 	border-radius: 50%;
 	border: var(--radio-border) solid gray;
 	position: relative;
-	overflow: clip;
+	/* overflow: clip; */
 }
 
 input[type='radio']::before {
-	--radio-checked-dimensions: calc(var(--radio-dimensions) + (2 * var(--radio-border)));
+	--radio-checked-scale: 0;
+	--radio-checked-position: 50%;
+	--radio-checked-offset-y: calc(
+		var(--radio-checked-position) - (var(--radio-checked-scale) * var(--radio-border))
+	);
+
 	display: block;
+	/* margin: auto; */
+	position: absolute;
+	right: 50%;
+	bottom: 50%;
+	transform: translate(var(--radio-checked-position), var(--radio-checked-offset-y))
+		scale(var(--radio-checked-scale));
+
 	content: '⬤';
 	transform-origin: center;
-	transition: all 0.3s;
-	transform: translate(-0.109375em, -0.15625em) scale(0);
-
-	/* Safari, prevent transition from clipping */
-	width: var(--radio-checked-dimensions);
-	height: var(--radio-checked-dimensions);
+	transition: transform 0.3s;
+	color: #4b4b4ba1;
 }
 
 input[type='radio']:checked::before {
-	transform: translate(-0.109375em, -0.15625em) scale(0.5);
+	--radio-checked-scale: 0.6;
+	transform: translate(var(--radio-checked-position), var(--radio-checked-offset-y))
+		scale(var(--radio-checked-scale));
 }
+
+/* TODO:
+input[type='button'],
+input[type='checkbox'],
+input[type='color'],
+input[type='date'],
+input[type='datetime-local'],
+input[type='email'],
+input[type='file'],
+input[type='hidden'],
+input[type='image'],
+input[type='month'],
+input[type='number'],
+input[type='password'],
+input[type='radio'],
+input[type='range'],
+input[type='search'],
+input[type='submit'],
+input[type='tel'],
+input[type='text'],
+input[type='time'],
+input[type='url'],
+input[type='week'],
+*/

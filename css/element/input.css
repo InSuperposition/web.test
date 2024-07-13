@@ -1,11 +1,7 @@
 input {
 	font: inherit;
 	margin: 0;
-
-	/* &::before,
-	&::after {
-		margin: auto;
-	} */
+	cursor: pointer;
 }
 input:where([type='search'], [type='checkbox'], [type='radio']) {
 	appearance: none;
@@ -25,22 +21,21 @@ input[type='radio'] {
 	border-radius: 50%;
 	border: var(--radio-border) solid gray;
 	position: relative;
-	/* overflow: clip; */
+	overflow: clip;
 }
 
 input[type='radio']::before {
 	--radio-checked-scale: 0;
-	--radio-checked-position: 50%;
+	--radio-checked-offset: 50%;
 	--radio-checked-offset-y: calc(
-		var(--radio-checked-position) - (var(--radio-checked-scale) * var(--radio-border))
+		var(--radio-checked-offset) - (var(--radio-checked-scale) * var(--radio-border))
 	);
 
 	display: block;
-	/* margin: auto; */
 	position: absolute;
 	right: 50%;
 	bottom: 50%;
-	transform: translate(var(--radio-checked-position), var(--radio-checked-offset-y))
+	transform: translate(var(--radio-checked-offset), var(--radio-checked-offset-y))
 		scale(var(--radio-checked-scale));
 
 	content: '⬤';
@@ -51,7 +46,7 @@ input[type='radio']::before {
 
 input[type='radio']:checked::before {
 	--radio-checked-scale: 0.6;
-	transform: translate(var(--radio-checked-position), var(--radio-checked-offset-y))
+	transform: translate(var(--radio-checked-offset), var(--radio-checked-offset-y))
 		scale(var(--radio-checked-scale));
 }
 

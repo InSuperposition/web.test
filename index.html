@@ -24,71 +24,90 @@
 			<!-- Forms -->
 			<section id="forms">
 				<fieldset>
-					<legend>Radio</legend>
+					<legend>Indeterminate</legend>
 					<label data-radio for="radio_name_0">
-						<input id="radio_name_0" type="radio" name="radio_name" value="0" />
+						<input id="radio_name_0" type="radio" name="indeterminate" value="0" />
 						<label for="radio_name_0">zero</label>
 					</label>
 					<!-- <hr /> -->
 					<label data-radio for="radio_name_1">
-						<input id="radio_name_1" type="radio" name="radio_name" value="1" />
+						<input id="radio_name_1" type="radio" name="indeterminate" value="1" />
 						<label for="radio_name_1">one</label>
 					</label>
 				</fieldset>
 
-				<br />
+				<fieldset>
+					<legend>Default</legend>
+					<label data-radio for="default_0">
+						<input id="default_0" type="radio" name="default" value="0" />
+						<label for="default_0">zero</label>
+					</label>
+					<!-- <hr /> -->
+					<label data-radio for="default_1">
+						<input id="default_1" type="radio" name="default" value="1" checked />
+						<label for="default_1">one</label>
+					</label>
+				</fieldset>
+
 				<fieldset>
 					<legend>Checkbox</legend>
 					<label data-radio for="checkbox_name_0">
 						<input id="checkbox_name_0" type="checkbox" name="checkbox_0" value="0" />
 						<label for="checkbox_name_0">zero</label>
 					</label>
-					<hr />
 					<label data-radio for="checkbox_name_1">
-						<input id="checkbox_name_1" type="checkbox" name="checkbox_1" value="1" />
+						<input id="checkbox_name_1" type="checkbox" name="checkbox_1" value="1" checked />
 						<label for="checkbox_name_1">one</label>
 					</label>
 				</fieldset>
-				<label for="button_name_1">
-					<input id="button_name_1" type="button" name="button_name" value="Click Me!" />
-				</label>
+				<hr />
+				<fieldset>
+					<legend>Button</legend>
+					<label for="button_name_1">
+						<input id="button_name_1" type="button" name="button_name" value="Click Me!" />
+					</label>
+					<input type="reset" value="Reset" />
+
+					<button id="button_name_2" type="button">Click Me!</button>
+					<input type="submit" value="Submit" />
+					<select id="select" name="select">
+						<option value="1">Option 1</option>
+						<option value="2">Option 2</option>
+					</select>
+				</fieldset>
 
 				<form id="form" action="/submit" method="post" enctype="multipart/form-data">
-					<fieldset id="fieldset">
-						<legend id="legend">Form Legend</legend>
-						<label id="label" for="name">Name:</label>
-						<input id="input" type="text" name="name" required />
-						<input type="button" value="Button" />
-						<input type="checkbox" name="checkbox" />
-						<input type="color" name="color" />
+					<fieldset>
+						<legend>Text</legend>
+						<input type="email" name="email" placeholder="email" />
+						<input type="number" name="number" placeholder="number" />
+						<input type="password" name="password" placeholder="password" />
+						<input type="search" name="search" placeholder="search" />
+						<input type="tel" name="tel" placeholder="tel" />
+						<input type="text" name="text" placeholder="text" />
+						<input type="url" name="url" placeholder="url" />
+
 						<input type="date" name="date" />
 						<input type="datetime-local" name="datetime-local" />
-						<input type="email" name="email" />
+						<input type="month" name="month" />
+						<input type="time" name="time" />
+						<input type="week" name="week" />
+						<hr />
+						<textarea id="textarea" rows="4" cols="50">Sample text</textarea>
+						<hr />
+						<input type="color" name="color" />
+						<input type="range" name="range" />
 						<input type="file" name="file" />
 						<input type="hidden" name="hidden" />
-						<input type="image" src="submit.png" alt="Submit" />
-						<input type="month" name="month" />
-						<input type="number" name="number" />
-						<input type="password" name="password" />
-						<input type="radio" name="radio" />
-						<input type="range" name="range" />
-						<input type="reset" value="Reset" />
-						<input type="search" name="search" />
-						<input type="submit" value="Submit" />
-						<input type="tel" name="tel" />
-						<input type="text" name="text" />
-						<input type="time" name="time" />
-						<input type="url" name="url" />
-						<input type="week" name="week" />
-						<textarea id="textarea" rows="4" cols="50">Sample text</textarea>
-						<button id="button" type="button">Click Me</button>
-						<select id="select" name="select">
-							<option value="1">Option 1</option>
-							<option value="2">Option 2</option>
-						</select>
+						<input
+							type="image"
+							src="data:image/gif;base64,R0lGODdhMAAwAPAAAAAAAP///ywAAAAAMAAw AAAC8IyPqcvt3wCcDkiLc7C0qwyGHhSWpjQu5yqmCYsapyuvUUlvONmOZtfzgFz ByTB10QgxOR0TqBQejhRNzOfkVJ+5YiUqrXF5Y5lKh/DeuNcP5yLWGsEbtLiOSp a/TPg7JpJHxyendzWTBfX0cxOnKPjgBzi4diinWGdkF8kjdfnycQZXZeYGejmJl ZeGl9i2icVqaNVailT6F5iJ90m6mvuTS4OK05M0vDk0Q4XUtwvKOzrcd3iq9uis F81M1OIcR7lEewwcLp7tuNNkM3uNna3F2JQFo97Vriy/Xl4/f1cf5VWzXyym7PH hhx4dbgYKAAA7"
+							alt="submit"
+						/>
 					</fieldset>
 				</form>
 			</section>
+
 			<!-- Content sectioning -->
 			<address id="address">
 				123 Example St.<br />

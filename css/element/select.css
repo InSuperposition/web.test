@@ -1,0 +1,15 @@
+select {
+	appearance: none;
+	border: 2px solid #4b4b4ba1;
+	color: 2px solid #4b4b4ba1;
+	background-color: buttonface;
+	border-radius: 0.25em;
+	box-sizing: inherit;
+	font: inherit;
+
+	padding: 1px 32px 1px 6px;
+
+	background-image: url(data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+CiAgPHBhdGggZmlsbD0iIzRiNGI0YiIgZD0iTTE2LjU5IDcuNDFMMTIgMTIuMTcgNy40MSA3LjQxIDYgMTBsNiA2IDYtNnoiLz4KPC9zdmc+Cg==);
+	background-repeat: no-repeat;
+	background-position: right 0.125em center;
+}

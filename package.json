@@ -1,5 +1,10 @@
 {
-	"dependencies": {
-		"lightningcss": "^1.25.1"
-	}
+	"devDependencies": {
+		"@playwright/test": "^1.45.2",
+		"@types/node": "^20.14.11",
+		"browserslist": "^4.23.2",
+		"lightningcss": "^1.25.1",
+		"vite": "^5.3.4"
+	},
+	"scripts": {}
 }

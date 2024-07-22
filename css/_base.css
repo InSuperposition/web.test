@@ -1,3 +1,5 @@
+@import url(theme.css);
+@import url(development/lint.css);
 @import url(element/html.css);
 @import url(element/body.css);
 @import url(element/button.css);
@@ -8,6 +10,21 @@
 
 @import url(component/input.css);
 
-#forms {
-	margin: 25px;
+[data-layout-content] {
+	padding: 10px 25px;
+}
+
+[data-menu] {
+	background-color: #f88600a1;
+}
+
+[data-status-bar] {
+	background-color: #48a0dfa1;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: auto-fit;
+	column-gap: 8px;
+	row-gap: 8px;
 }

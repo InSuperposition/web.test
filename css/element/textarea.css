@@ -1,10 +1,11 @@
 textarea {
 	appearance: none;
-	border: 2px solid #4b4b4ba1;
-	border-radius: 0.25em;
+	border: var(--input-border);
+	color: var(--text-input-color);
+	border-radius: var(--input-border-radius);
 	box-sizing: inherit;
 	font: inherit;
 
-	height: 1.5em;
-	padding: 0.0625em 0.375em;
+	height: 24px;
+	padding: var(--text-input-padding-y) var(--text-input-padding-x);
 }

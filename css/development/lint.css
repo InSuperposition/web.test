@@ -1,0 +1,8 @@
+:where(a):has([target='_blank']):not([rel='noreferrer']) {
+	color: #ff0000;
+	text-decoration: none;
+
+	&::after {
+		content: ' => ERROR: This element is missing rel="noreferrer"';
+	}
+}

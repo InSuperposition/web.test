@@ -8,13 +8,6 @@ input:where([type='button'], [type='reset'], [type='submit']) {
 	padding: var(--button-padding-y) var(--button-padding-x);
 }
 
-button,
-select{
-	appearance: none;
-	box-sizing: inherit;
-	font: inherit;
-}
-
 select {
 	outline: 0;
 	background-image: url(data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+CiAgPHBhdGggZmlsbD0iIzRiNGI0YiIgZD0iTTE2LjU5IDcuNDFMMTIgMTIuMTcgNy40MSA3LjQxIDYgMTBsNiA2IDYtNnoiLz4KPC9zdmc+Cg==);
@@ -56,4 +49,3 @@ input[type='file'] {
 		height: 32px;
 	}
 }
-

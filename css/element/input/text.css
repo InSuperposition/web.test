@@ -20,12 +20,6 @@ input:where(
 	padding: var(--text-input-padding-y) var(--text-input-padding-x);
 }
 
-textarea {
-	appearance: none;
-	box-sizing: inherit;
-	font: inherit;
-}
-
 /* === -webkit shadow DOM styles === */
 input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button {

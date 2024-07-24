@@ -1,0 +1,65 @@
+
+/* checked input */
+input:where([type='checkbox'], [type='radio']) {
+	--input-checked-dimensions: 16px;
+	--input-checked-border: calc(0.125 * var(--input-checked-dimensions));
+	cursor: pointer;
+	width: var(--input-checked-dimensions);
+	height: var(--input-checked-dimensions);
+	border: var(--input-checked-border) solid gray;
+	position: relative;
+	overflow: clip;
+	margin: 0;
+
+	&::before {
+		--input-checked-scale: 0;
+		--input-checked-offset: 50%;
+		--input-checked-offset-y: calc(
+			var(--input-checked-offset) - (var(--input-checked-scale) * var(--input-checked-border))
+		);
+
+		display: block;
+		position: absolute;
+		right: 50%;
+		bottom: 50%;
+		transform: translate(var(--input-checked-offset), var(--input-checked-offset-y))
+			scale(var(--input-checked-scale));
+		transform-origin: center;
+		transition: transform 0.3s;
+		color: #4b4b4ba1;
+	}
+
+	&:checked::before {
+		transform: translate(var(--input-checked-offset), var(--input-checked-offset-y))
+			scale(var(--input-checked-scale));
+	}
+}
+
+input[type='radio'] {
+	border-radius: 50%;
+
+	&:checked::before {
+		--input-checked-scale: 0.6;
+	}
+	&::before {
+		content: '⬤';
+	}
+}
+
+input[type='checkbox'] {
+	border-radius: var(--input-border-radius);
+
+	&:checked {
+		background-color: #4b4b4ba1;
+	}
+
+	&::before {
+		content: '✔';
+		font-weight: 100;
+		color: #ffffffff;
+		text-shadow: 1px 1px 8px #4b4b4ba1, 2px 2px 10px #f88600a1, 1px 1px 8px #48a0dfa1;
+	}
+	&:checked::before {
+		--input-checked-scale: 0.75;
+	}
+}

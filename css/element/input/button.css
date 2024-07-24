@@ -1,0 +1,59 @@
+button,
+select,
+input:where([type='button'], [type='reset'], [type='submit']) {
+	background-color: var(--button-background-color);
+	border: var(--input-border);
+	border-radius: var(--input-border-radius);
+	height: 24px;
+	padding: var(--button-padding-y) var(--button-padding-x);
+}
+
+button,
+select{
+	appearance: none;
+	box-sizing: inherit;
+	font: inherit;
+}
+
+select {
+	outline: 0;
+	background-image: url(data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+CiAgPHBhdGggZmlsbD0iIzRiNGI0YiIgZD0iTTE2LjU5IDcuNDFMMTIgMTIuMTcgNy40MSA3LjQxIDYgMTBsNiA2IDYtNnoiLz4KPC9zdmc+Cg==);
+	background-repeat: no-repeat;
+	background-position: right 2px center;
+
+	padding: var(--button-padding-y) 24px var(--button-padding-y) var(--button-padding-x);
+
+	&:hover {
+		background-color: buttonhoverface;
+	}
+}
+
+input[type='color'] {
+	background-color: var(--button-background-color);
+	border: var(--input-border);
+	border-radius: var(--input-border-radius);
+	height: 12px;
+	min-width: 64px;
+	padding: 8px;
+	vertical-align: 0px;
+
+	&::-webkit-color-swatch-wrapper {
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+input[type='file'] {
+	font: inherit;
+
+	&::file-selector-button {
+		background-color: var(--button-background-color);
+		border: var(--input-border);
+		border-radius: var(--input-border-radius);
+		font: inherit;
+		height: 32px;
+	}
+}
+

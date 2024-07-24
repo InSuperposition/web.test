@@ -1,0 +1,40 @@
+textarea,
+input:where(
+		[type='date'],
+		[type='datetime-local'],
+		[type='email'],
+		[type='month'],
+		[type='number'],
+		[type='password'],
+		[type='search'],
+		[type='tel'],
+		[type='text'],
+		[type='time'],
+		[type='url'],
+		[type='week']
+	) {
+	border: var(--input-border);
+	border-radius: var(--input-border-radius);
+	color: var(--text-input-color);
+	height: 28px;
+	padding: var(--text-input-padding-y) var(--text-input-padding-x);
+}
+
+textarea {
+	appearance: none;
+	box-sizing: inherit;
+	font: inherit;
+}
+
+/* === -webkit shadow DOM styles === */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	/* height: auto; */
+	/* background-color: red; */
+}
+
+/* === -moz shadow DOM styles === */
+input[type='number']::-moz-number-spin-down,
+input[type='number']::-moz-number-spin-up {
+	/* background-color: red; */
+}

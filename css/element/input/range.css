@@ -23,6 +23,7 @@ input[type='range'] {
 	height: 32px;
 	margin: 0;
 	/* transition: all ease 100ms; */
+	vertical-align: bottom;
 }
 
 input[type='range']:disabled {
@@ -30,8 +31,21 @@ input[type='range']:disabled {
 	opacity: 0.3;
 }
 
-/* === WebKit shadow DOM styles === */
+/* 
 
+input[type='range'] needs seperate delarations for -webkit and -moz vendor prefixes
+grouping prefix CSS selectors together, breaks styling in ALL browsers. See Quirksmode URL below for more info.
+
+https://www.quirksmode.org/blog/archives/2015/11/styling_and_scr.html
+
+- "Annoyingly, you cannot combine these selectors in one rule,
+  even though you usually want to give all browsers the same styles (except for margins on the thumb).
+  If a browser finds one selector it doesn’t understand it ignores all of them.
+  So you’ll have to repeat yourself or use a server-side CSS generator."
+
+*/
+
+/* === -webkit shadow DOM styles === */
 input[type='range']::-webkit-slider-thumb {
 	appearance: none;
 	height: var(--range_input_thumb-height);
@@ -71,7 +85,7 @@ input[type='range']::-webkit-slider-thumb:active {
 	filter: var(--brightness-down);
 }
 
-/* === Firefox shadow DOM styles === */
+/* === -moz shadow DOM styles === */
 input[type='range']::-moz-range-track,
 input[type='range']::-moz-range-thumb {
 	appearance: none;
@@ -127,20 +141,6 @@ input[type='range']:disabled::-moz-range-progress {
 	appearance: none !important;
 	cursor: not-allowed;
 }
-
-/* 
-
-input[type='range'] needs seperate delarations for webkit and moz vendor prefixes
-grouping prefix CSS selectors together, breaks styling in ALL browsers. See Quirksmode URL below for more info.
-
-https://www.quirksmode.org/blog/archives/2015/11/styling_and_scr.html
-
-- "Annoyingly, you cannot combine these selectors in one rule,
-  even though you usually want to give all browsers the same styles (except for margins on the thumb).
-  If a browser finds one selector it doesn’t understand it ignores all of them.
-  So you’ll have to repeat yourself or use a server-side CSS generator."
-
-*/
 
 /* input[type='range'] {
 	--range_input--cursor: pointer;

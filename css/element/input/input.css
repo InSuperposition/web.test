@@ -15,3 +15,13 @@ html {
 	--text-input-padding-x: var(--input-padding-x);
 	--text-input-padding-y: var(--input-padding-y);
 }
+
+input {
+	appearance: none;
+	box-sizing: inherit;
+	font: inherit;
+}
+
+input[type='image'] {
+	vertical-align: bottom;
+}

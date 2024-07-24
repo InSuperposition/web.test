@@ -1,13 +1,8 @@
-@import url(theme.css);
 @import url(development/lint.css);
 @import url(element/html.css);
 @import url(element/body.css);
-@import url(element/button.css);
 @import url(element/h.css);
-@import url(element/input.css);
-@import url(element/input/range.css);
-@import url(element/select.css);
-@import url(element/textarea.css);
+@import url(element/input/mod.css);
 
 @import url(component/input.css);
 

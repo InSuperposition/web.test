@@ -1,0 +1,205 @@
+/* 
+TODO: 
+- [ ] Add styles to mock -webkit-slider-progress
+      => https://stackoverflow.com/a/73140639/1402195
+*/
+
+input[type='range'] {
+	/* slider-thumb */
+	--range_input_thumb-height: 32px;
+	--range_input_thumb-width: 16px;
+	--range_input_thumb-border-radius: 1em;
+	--range_input_thumb-color: #4b4b4ba1;
+
+	/* slider-track */
+	--range_input_track-height: 12px;
+	--range_input_track-border-radius: 1em;
+	--range_input_track-color: #4b4b4ba1;
+
+	--brightness-hover: brightness(180%);
+	--brightness-down: brightness(80%);
+
+	appearance: none;
+	height: 32px;
+	margin: 0;
+	/* transition: all ease 100ms; */
+}
+
+input[type='range']:disabled {
+	filter: grayscale(1);
+	opacity: 0.3;
+}
+
+/* === WebKit shadow DOM styles === */
+
+input[type='range']::-webkit-slider-thumb {
+	appearance: none;
+	height: var(--range_input_thumb-height);
+	width: var(--range_input_thumb-width, var(--range_input_thumb-height));
+	background-color: var(--range_input_thumb-color);
+	border-radius: var(--range_input_thumb-border-radius);
+
+	cursor: grab;
+
+	/* vertically center slider-thumb shadow element*/
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+	background-color: var(--range_input_track-color);
+	border-radius: var(--range_input_track-border-radius);
+	cursor: pointer;
+	height: var(--range_input_track-height);
+}
+
+input[type='range']:active::-webkit-slider-runnable-track,
+input[type='range']:active::-webkit-slider-thumb {
+	cursor: grabbing;
+}
+
+input[type='range']:disabled::-webkit-slider-thumb,
+input[type='range']:disabled::-webkit-slider-runnable-track {
+	cursor: not-allowed;
+}
+input[type='range']::-webkit-slider-runnable-track:hover {
+	filter: var(--brightness-hover);
+}
+
+input[type='range']::-webkit-slider-thumb:active {
+	filter: var(--brightness-down);
+}
+
+/* === Firefox shadow DOM styles === */
+input[type='range']::-moz-range-track,
+input[type='range']::-moz-range-thumb {
+	appearance: none;
+	height: var(--range_input_thumb-height);
+}
+
+input[type='range']::-moz-range-thumb {
+	background-color: var(--range_input_thumb-color);
+	border: 0;
+	width: var(--range_input_thumb-width, var(--range_input_thumb-height));
+	border-radius: var(--range_input_thumb-border-radius);
+	cursor: grab;
+}
+
+input[type='range']:active::-moz-range-thumb {
+	cursor: grabbing;
+}
+
+input[type='range']::-moz-range-track {
+	width: 100%;
+	background: var(--range_input_track-color);
+}
+
+input[type='range']::-moz-range-progress {
+	background-color: red;
+	transition-delay: 30ms;
+}
+
+input[type='range']::-moz-range-track,
+input[type='range']::-moz-range-progress {
+	height: calc(var(--range_input_track-height) + 1px);
+	border-radius: var(--range_input_track-height);
+}
+
+input[type='range']::-moz-range-thumb,
+input[type='range']::-moz-range-progress {
+	filter: brightness(100%);
+}
+
+input[type='range']::-moz-range-thumb:hover,
+input[type='range']::-moz-range-progress:hover {
+	filter: var(--brightness-hover);
+}
+
+input[type='range']:active::-moz-range-thumb,
+input[type='range']:active::-moz-range-progress {
+	filter: var(--brightness-down);
+}
+
+input[type='range']:disabled::-moz-range-thumb,
+input[type='range']:disabled::-moz-range-track,
+input[type='range']:disabled::-moz-range-progress {
+	appearance: none !important;
+	cursor: not-allowed;
+}
+
+/* 
+
+input[type='range'] needs seperate delarations for webkit and moz vendor prefixes
+grouping prefix CSS selectors together, breaks styling in ALL browsers. See Quirksmode URL below for more info.
+
+https://www.quirksmode.org/blog/archives/2015/11/styling_and_scr.html
+
+- "Annoyingly, you cannot combine these selectors in one rule,
+  even though you usually want to give all browsers the same styles (except for margins on the thumb).
+  If a browser finds one selector it doesn’t understand it ignores all of them.
+  So you’ll have to repeat yourself or use a server-side CSS generator."
+
+*/
+
+/* input[type='range'] {
+	--range_input--cursor: pointer;
+
+	--range_input_thumb--appearance: none;
+	--range_input_thumb--border: none;
+	--range_input_thumb--box-sizing: inherit;
+	--range_input_thumb--height: 16px;
+	--range_input_thumb--width: 16px;
+	--range_input_thumb--border-radius: 50%;
+
+	--range_input_track--width: 100%;
+	--range_input_track--height-offset-y: 1px;
+	--range_input_track--height: calc(
+		(var(--range_input_thumb--height) / 4) + var(--range_input_track--height-offset-y)
+	);
+	--range_input_track--border-radius: 3px;
+} */
+
+/* input[type='range']::slider-track styles */
+/*
+input[type='range']::-webkit-slider-runnable-track {
+	width: var(--range_input_track--width);
+	height: var(--range_input_track--height);
+	background: var(--button-background-color);
+	border-radius: var(--range_input_track--border-radius);
+	cursor: var(--range_input--cursor);
+}
+	*/
+/* 
+input[type='range']::-moz-range-track {
+	width: var(--range_input_track--width);
+	height: var(--range_input_track--height);
+	background: var(--button-background-color);
+	border-radius: var(--range_input_track--border-radius);
+	cursor: var(--range_input--cursor);
+} */
+
+/* input[type='range']::slider-thumb styles */
+/* input[type='range']::-webkit-slider-thumb {
+	appearance: var(--range_input_thumb--appearance);
+	border: var(--range_input_thumb--border);
+	box-sizing: var(--range_input_thumb--box-sizing);
+	height: var(--range_input_thumb--height);
+	width: var(--range_input_thumb--width);
+	border: var(--input-border);
+	border-radius: var(--range_input_thumb--border-radius);
+	background-color: var(--button-background-color);
+
+} */
+
+/* input[type='range']::-moz-range-thumb {
+	appearance: var(--range_input_thumb--appearance) !important;
+	border: var(--range_input_thumb--border);
+	box-sizing: var(--range_input_thumb--box-sizing);
+	height: var(--range_input_thumb--height);
+	width: var(--range_input_thumb--width);
+	border: var(--input-border);
+	border-radius: var(--range_input_thumb--border-radius);
+	background-color: var(--button-background-color);
+	cursor: var(--range_input--cursor);
+} */

@@ -3,22 +3,3 @@
 @import url(body.css);
 @import url(h.css);
 @import url(input/mod.css);
-
-[data-layout-content] {
-	padding: 10px 25px;
-}
-
-[data-menu] {
-	background-color: #f88600a1;
-}
-
-[data-status-bar] {
-	background-color: #48a0dfa1;
-}
-
-.grid {
-	display: grid;
-	grid-template-columns: auto-fit;
-	column-gap: 8px;
-	row-gap: 8px;
-}

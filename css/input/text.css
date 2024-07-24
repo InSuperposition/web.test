@@ -14,10 +14,10 @@ input:where(
 		[type='week']
 	) {
 	border: var(--input--border);
-	border-radius: var(--input--border-radius);
+	border-radius: var(--input--border_radius);
 	color: var(--text_input--color);
 	height: 28px;
-	padding: var(--text_input--padding-y) var(--text_input--padding-x);
+	padding: var(--text_input--padding_y) var(--text_input--padding_x);
 }
 
 /* === -webkit shadow DOM styles === */

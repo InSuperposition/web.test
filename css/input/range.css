@@ -6,15 +6,15 @@ TODO:
 
 input[type='range'] {
 	/* slider-thumb */
-	--range_input_thumb-height: 32px;
-	--range_input_thumb-width: 16px;
-	--range_input_thumb-border-radius: 1em;
-	--range_input_thumb-color: #4b4b4ba1;
+	--range_input_thumb--height: 32px;
+	--range_input_thumb--width: 16px;
+	--range_input_thumb--border_radius: 1em;
+	--range_input_thumb--color: #4b4b4ba1;
 
 	/* slider-track */
-	--range_input_track-height: 12px;
-	--range_input_track-border-radius: 1em;
-	--range_input_track-color: #4b4b4ba1;
+	--range_input_track--height: 12px;
+	--range_input_track--border_radius: 1em;
+	--range_input_track--color: #4b4b4ba1;
 
 	--brightness-hover: brightness(180%);
 	--brightness-down: brightness(80%);
@@ -48,10 +48,10 @@ https://www.quirksmode.org/blog/archives/2015/11/styling_and_scr.html
 /* === -webkit shadow DOM styles === */
 input[type='range']::-webkit-slider-thumb {
 	appearance: none;
-	height: var(--range_input_thumb-height);
-	width: var(--range_input_thumb-width, var(--range_input_thumb-height));
-	background-color: var(--range_input_thumb-color);
-	border-radius: var(--range_input_thumb-border-radius);
+	height: var(--range_input_thumb--height);
+	width: var(--range_input_thumb--width, var(--range_input_thumb--height));
+	background-color: var(--range_input_thumb--color);
+	border-radius: var(--range_input_thumb--border_radius);
 
 	cursor: grab;
 
@@ -62,10 +62,10 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 input[type='range']::-webkit-slider-runnable-track {
-	background-color: var(--range_input_track-color);
-	border-radius: var(--range_input_track-border-radius);
+	background-color: var(--range_input_track--color);
+	border-radius: var(--range_input_track--border_radius);
 	cursor: pointer;
-	height: var(--range_input_track-height);
+	height: var(--range_input_track--height);
 }
 
 input[type='range']:active::-webkit-slider-runnable-track,
@@ -89,14 +89,14 @@ input[type='range']::-webkit-slider-thumb:active {
 input[type='range']::-moz-range-track,
 input[type='range']::-moz-range-thumb {
 	appearance: none;
-	height: var(--range_input_thumb-height);
+	height: var(--range_input_thumb--height);
 }
 
 input[type='range']::-moz-range-thumb {
-	background-color: var(--range_input_thumb-color);
+	background-color: var(--range_input_thumb--color);
 	border: 0;
-	width: var(--range_input_thumb-width, var(--range_input_thumb-height));
-	border-radius: var(--range_input_thumb-border-radius);
+	width: var(--range_input_thumb--width, var(--range_input_thumb--height));
+	border-radius: var(--range_input_thumb--border_radius);
 	cursor: grab;
 }
 
@@ -106,7 +106,7 @@ input[type='range']:active::-moz-range-thumb {
 
 input[type='range']::-moz-range-track {
 	width: 100%;
-	background: var(--range_input_track-color);
+	background: var(--range_input_track--color);
 }
 
 input[type='range']::-moz-range-progress {
@@ -116,8 +116,8 @@ input[type='range']::-moz-range-progress {
 
 input[type='range']::-moz-range-track,
 input[type='range']::-moz-range-progress {
-	height: calc(var(--range_input_track-height) + 1px);
-	border-radius: var(--range_input_track-height);
+	height: calc(var(--range_input_track--height) + 1px);
+	border-radius: var(--range_input_track--height);
 }
 
 input[type='range']::-moz-range-thumb,
@@ -150,32 +150,32 @@ input[type='range']:disabled::-moz-range-progress {
 	--range_input_thumb--box-sizing: inherit;
 	--range_input_thumb--height: 16px;
 	--range_input_thumb--width: 16px;
-	--range_input_thumb--border-radius: 50%;
+	--range_input_thumb--border_radius: 50%;
 
-	--range_input_track--width: 100%;
-	--range_input_track--height-offset-y: 1px;
-	--range_input_track--height: calc(
-		(var(--range_input_thumb--height) / 4) + var(--range_input_track--height-offset-y)
+	--range_input_track---width: 100%;
+	--range_input_track---height-offset_y: 1px;
+	--range_input_track---height: calc(
+		(var(--range_input_thumb--height) / 4) + var(--range_input_track---height-offset_y)
 	);
-	--range_input_track--border-radius: 3px;
+	--range_input_track---border_radius: 3px;
 } */
 
 /* input[type='range']::slider-track styles */
 /*
 input[type='range']::-webkit-slider-runnable-track {
-	width: var(--range_input_track--width);
-	height: var(--range_input_track--height);
-	background: var(--button--background-color);
-	border-radius: var(--range_input_track--border-radius);
+	width: var(--range_input_track---width);
+	height: var(--range_input_track---height);
+	background: var(--button--background_color);
+	border-radius: var(--range_input_track---border_radius);
 	cursor: var(--range_input--cursor);
 }
 	*/
 /* 
 input[type='range']::-moz-range-track {
-	width: var(--range_input_track--width);
-	height: var(--range_input_track--height);
-	background: var(--button--background-color);
-	border-radius: var(--range_input_track--border-radius);
+	width: var(--range_input_track---width);
+	height: var(--range_input_track---height);
+	background: var(--button--background_color);
+	border-radius: var(--range_input_track---border_radius);
 	cursor: var(--range_input--cursor);
 } */
 
@@ -187,8 +187,8 @@ input[type='range']::-moz-range-track {
 	height: var(--range_input_thumb--height);
 	width: var(--range_input_thumb--width);
 	border: var(--input--border);
-	border-radius: var(--range_input_thumb--border-radius);
-	background-color: var(--button--background-color);
+	border-radius: var(--range_input_thumb--border_radius);
+	background-color: var(--button--background_color);
 
 } */
 
@@ -199,7 +199,7 @@ input[type='range']::-moz-range-track {
 	height: var(--range_input_thumb--height);
 	width: var(--range_input_thumb--width);
 	border: var(--input--border);
-	border-radius: var(--range_input_thumb--border-radius);
-	background-color: var(--button--background-color);
+	border-radius: var(--range_input_thumb--border_radius);
+	background-color: var(--button--background_color);
 	cursor: var(--range_input--cursor);
 } */

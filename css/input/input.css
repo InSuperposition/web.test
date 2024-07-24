@@ -3,20 +3,20 @@ button,
 select,
 textarea {
 	--input--border-color: #4b4b4ba1;
-	--input--border-radius: 4px;
+	--input--border_radius: 4px;
 	--input--border-style: solid;
 	--input--border-width: 2px;
 	--input--border: var(--input--border-width) var(--input--border-style) var(--input--border-color);
-	--input--padding-x: 6px;
-	--input--padding-y: 1px;
+	--input--padding_x: 6px;
+	--input--padding_y: 1px;
 
-	--button--background-color: #efefef;
-	--button--padding-x: var(--input--padding-x);
-	--button--padding-y: 2px;
+	--button--background_color: #efefef;
+	--button--padding_x: var(--input--padding_x);
+	--button--padding_y: 2px;
 
 	--text_input--color: #4b4b4b;
-	--text_input--padding-x: var(--input--padding-x);
-	--text_input--padding-y: var(--input--padding-y);
+	--text_input--padding_x: var(--input--padding_x);
+	--text_input--padding_y: var(--input--padding_y);
 
 	appearance: none;
 	box-sizing: inherit;

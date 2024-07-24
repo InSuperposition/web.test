@@ -13,7 +13,7 @@ input:where([type='checkbox'], [type='radio']) {
 	&::before {
 		--checked_input--scale: 0;
 		--checked_input--offset: 50%;
-		--checked_input--offset-y: calc(
+		--checked_input--offset_y: calc(
 			var(--checked_input--offset) - (var(--checked_input--scale) * var(--checked_input--border))
 		);
 
@@ -21,7 +21,7 @@ input:where([type='checkbox'], [type='radio']) {
 		position: absolute;
 		right: 50%;
 		bottom: 50%;
-		transform: translate(var(--checked_input--offset), var(--checked_input--offset-y))
+		transform: translate(var(--checked_input--offset), var(--checked_input--offset_y))
 			scale(var(--checked_input--scale));
 		transform-origin: center;
 		transition: transform 0.3s;
@@ -29,7 +29,7 @@ input:where([type='checkbox'], [type='radio']) {
 	}
 
 	&:checked::before {
-		transform: translate(var(--checked_input--offset), var(--checked_input--offset-y))
+		transform: translate(var(--checked_input--offset), var(--checked_input--offset_y))
 			scale(var(--checked_input--scale));
 	}
 }
@@ -46,7 +46,7 @@ input[type='radio'] {
 }
 
 input[type='checkbox'] {
-	border-radius: var(--input--border-radius);
+	border-radius: var(--input--border_radius);
 
 	&:checked {
 		background-color: #4b4b4ba1;

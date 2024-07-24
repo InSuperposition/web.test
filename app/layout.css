@@ -4,8 +4,8 @@
 }
 
 [data-layout] {
-	--layout-content-top: 40px;
-	--layout-content-bottom: 25px;
+	--layout--content-top: 40px;
+	--layout--content-bottom: 25px;
 	container-name: layout;
 	container-type: size;
 	min-height: 100%;
@@ -13,8 +13,8 @@
 }
 
 [data-layout-content] {
-	margin-top: var(--layout-content-top);
-	margin-bottom: var(--layout-content-bottom);
+	margin-top: var(--layout--content-top);
+	margin-bottom: var(--layout--content-bottom);
 	overflow: scroll;
 	transition: margin-top 0.5s ease-in-out 0s;
 	position: absolute;
@@ -29,7 +29,7 @@
 	top: 0px;
 	left: 0px;
 	right: 0px;
-	height: var(--layout-content-top);
+	height: var(--layout--content-top);
 	width: 100%;
 	transition: auto 0.5s ease-out 0.25s;
 }
@@ -39,19 +39,19 @@
 	bottom: 0px;
 	left: 0px;
 	right: 0px;
-	height: var(--layout-content-bottom);
+	height: var(--layout--content-bottom);
 }
 
 @container layout (max-width: 400px) {
 	[data-layout-content] {
-		--layout-content-top: 0px;
+		--layout--content-top: 0px;
 	}
 
 	[data-menu] {
 		--menu-dimension: 50px;
 		--menu-end-end-gutter: 10px;
 		top: calc(
-			100% - var(--layout-content-bottom) - var(--menu-dimension) - var(--menu-end-end-gutter)
+			100% - var(--layout--content-bottom) - var(--menu-dimension) - var(--menu-end-end-gutter)
 		);
 		left: calc(100% - var(--menu-dimension) - var(--menu-end-end-gutter));
 		right: var(--menu-end-end-gutter);

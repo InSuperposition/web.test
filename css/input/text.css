@@ -13,11 +13,11 @@ input:where(
 		[type='url'],
 		[type='week']
 	) {
-	border: var(--input-border);
-	border-radius: var(--input-border-radius);
-	color: var(--text-input-color);
+	border: var(--input--border);
+	border-radius: var(--input--border-radius);
+	color: var(--text_input--color);
 	height: 28px;
-	padding: var(--text-input-padding-y) var(--text-input-padding-x);
+	padding: var(--text_input--padding-y) var(--text_input--padding-x);
 }
 
 /* === -webkit shadow DOM styles === */

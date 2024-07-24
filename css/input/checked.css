@@ -1,37 +1,36 @@
-
 /* checked input */
 input:where([type='checkbox'], [type='radio']) {
-	--input-checked-dimensions: 16px;
-	--input-checked-border: calc(0.125 * var(--input-checked-dimensions));
+	--checked_input--dimensions: 16px;
+	--checked_input--border: calc(0.125 * var(--checked_input--dimensions));
 	cursor: pointer;
-	width: var(--input-checked-dimensions);
-	height: var(--input-checked-dimensions);
-	border: var(--input-checked-border) solid gray;
+	width: var(--checked_input--dimensions);
+	height: var(--checked_input--dimensions);
+	border: var(--checked_input--border) solid gray;
 	position: relative;
 	overflow: clip;
 	margin: 0;
 
 	&::before {
-		--input-checked-scale: 0;
-		--input-checked-offset: 50%;
-		--input-checked-offset-y: calc(
-			var(--input-checked-offset) - (var(--input-checked-scale) * var(--input-checked-border))
+		--checked_input--scale: 0;
+		--checked_input--offset: 50%;
+		--checked_input--offset-y: calc(
+			var(--checked_input--offset) - (var(--checked_input--scale) * var(--checked_input--border))
 		);
 
 		display: block;
 		position: absolute;
 		right: 50%;
 		bottom: 50%;
-		transform: translate(var(--input-checked-offset), var(--input-checked-offset-y))
-			scale(var(--input-checked-scale));
+		transform: translate(var(--checked_input--offset), var(--checked_input--offset-y))
+			scale(var(--checked_input--scale));
 		transform-origin: center;
 		transition: transform 0.3s;
 		color: #4b4b4ba1;
 	}
 
 	&:checked::before {
-		transform: translate(var(--input-checked-offset), var(--input-checked-offset-y))
-			scale(var(--input-checked-scale));
+		transform: translate(var(--checked_input--offset), var(--checked_input--offset-y))
+			scale(var(--checked_input--scale));
 	}
 }
 
@@ -39,7 +38,7 @@ input[type='radio'] {
 	border-radius: 50%;
 
 	&:checked::before {
-		--input-checked-scale: 0.6;
+		--checked_input--scale: 0.6;
 	}
 	&::before {
 		content: '⬤';
@@ -47,7 +46,7 @@ input[type='radio'] {
 }
 
 input[type='checkbox'] {
-	border-radius: var(--input-border-radius);
+	border-radius: var(--input--border-radius);
 
 	&:checked {
 		background-color: #4b4b4ba1;
@@ -60,6 +59,6 @@ input[type='checkbox'] {
 		text-shadow: 1px 1px 8px #4b4b4ba1, 2px 2px 10px #f88600a1, 1px 1px 8px #48a0dfa1;
 	}
 	&:checked::before {
-		--input-checked-scale: 0.75;
+		--checked_input--scale: 0.75;
 	}
 }

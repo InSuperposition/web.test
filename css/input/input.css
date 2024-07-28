@@ -11,6 +11,7 @@ textarea {
 	--input--padding_y: 1px;
 
 	--button--background_color: #efefef;
+	--button--height: 32px;
 	--button--padding_x: var(--input--padding_x);
 	--button--padding_y: 2px;
 
@@ -25,4 +26,8 @@ textarea {
 
 input[type='image'] {
 	vertical-align: bottom;
+}
+
+input[type='password'] {
+	-webkit-text-security: none;
 }

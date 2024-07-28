@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<base href="/" />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="height=device-height, width=device-width, initial-scale=1" />
 		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 		<meta http-equiv="Pragma" content="no-cache" />
 		<meta http-equiv="Expires" content="0" />
-		<title>HTML Elements and Attributes</title>
+		<base href="/" />
 		<link rel="stylesheet" type="text/css" href="css/base.css" />
 		<link rel="stylesheet" type="text/css" href="app/main.css" />
 		<link rel="icon" type="image/svg+xml" href="icon/logo.svg" />
+		<title>HTML Elements and Attributes</title>
 	</head>
 
 	<body data-layout id="body">
 		<div data-layout-content>
 			<noscript><h1>JavaScript is Disabled</h1></noscript>
-
+			<!-- 
 			<header>
 				<h1>HTML elements reference</h1>
 				<a
@@ -25,6 +25,7 @@
 					target="_blank"
 					>https://developer.mozilla.org/en-US/docs/Web/HTML/Element</a
 				>
+
 			</header>
 			<section id="main_root">
 				<h6>
@@ -284,7 +285,7 @@
 						</tr>
 					</tfoot>
 				</table>
-			</section>
+			</section> -->
 			<section id="forms">
 				<h4>
 					<a
@@ -310,7 +311,6 @@
 
 				<fieldset>
 					<legend>Default</legend>
-
 					<label data-radio for="default_0">
 						<input id="default_0" type="radio" name="default" value="0" />
 						<span>zero</span>
@@ -331,6 +331,21 @@
 					<label data-radio for="checkbox_name_1">
 						<input id="checkbox_name_1" type="checkbox" name="checkbox_1" value="1" checked />
 						<label for="checkbox_name_1">one</label>
+					</label>
+				</fieldset>
+				<fieldset>
+					<legend>Switch</legend>
+					<label data-radio for="checkbox_name_0">
+						<input id="switch_0" type="checkbox" switch name="switch_0" value="0" />
+						<label for="switch_0">zero</label>
+					</label>
+					<label data-radio for="checkbox_name_1">
+						<input id="switch_1" type="checkbox" switch name="switch_1" value="1" checked />
+						<label for="switch_1">one</label>
+					</label>
+					<label data-radio for="checkbox_name_1">
+						<input id="switch_2" type="checkbox" switch name="switch_2" value="1" indeterminate />
+						<label for="switch_2">one</label>
 					</label>
 				</fieldset>
 				<hr />
@@ -383,32 +398,48 @@
 						<hr />
 						<textarea id="textarea" rows="4" cols="50">Sample text</textarea>
 						<hr />
-
+						<progress></progress>
 						<input type="hidden" name="hidden" />
 					</fieldset>
 				</form>
 			</section>
 
-			<section id="interactive_elements" class="grid">
+			<section id="interactive_elements">
 				<details id="details">
 					<summary id="summary">More Info</summary>
 					<p>Additional details about HTML elements.</p>
 				</details>
+				<details open>
+					<summary>More Info</summary>
+					<p>Additional details about HTML elements.</p>
+				</details>
 				<button popovertarget="my-popover">Open Popover</button>
-				<div popover id="my-popover">Greetings, one and all!</div>
-			</section>
-			<section id="web_components" class="grid">
-				<slot id="slot">Default content</slot>
-				<template id="template">
-					<p>Template content</p>
-				</template>
+				<dialog popover id="my-popover">
+					Greetings, one and all!
+					<button popovertarget="my-popover" popovertargetaction="hide">close</button>
+				</dialog>
+				<input type="radio" name="group" />
+				<input type="text" name="text-1" />
+				<input type="radio" name="group" />
+				<input type="text" name="text-2" />
+				<input type="radio" name="group" />
+				<input type="text" name="text-3" />
+				<input type="checkbox" switch />
+				<input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+				<datalist id="ice-cream-flavors">
+					<option value="Chocolate"></option>
+					<option value="Coconut"></option>
+					<option value="Mint"></option>
+					<option value="Strawberry"></option>
+					<option value="Vanilla"></option>
+				</datalist>
 			</section>
 		</div>
 		<nav data-menu>
+			<!-- 
 			<a href="#main_root" target="_self">Main root</a>
 			<a href="#document_metadata" target="_self">Document metadata</a>
 			<a href="#sectioning_root" target="_self">Sectioning root</a>
-			<!-- 
 			<a href="#content_sectioning" target="_self">Content sectioning</a>
 			<a href="#text-content" target="_self">Text content</a>
 			<a href="#inline_text_semantics" target="_self">Inline text semantics</a>

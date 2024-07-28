@@ -1,27 +1,29 @@
 /* checked input */
 input:where([type='checkbox'], [type='radio']) {
-	--checked_input--dimensions: 16px;
-	--checked_input--border: calc(0.125 * var(--checked_input--dimensions));
+	--checked_input--dimensions: 20px;
+	--checked_input--border_width: 2px;
 	cursor: pointer;
 	width: var(--checked_input--dimensions);
 	height: var(--checked_input--dimensions);
-	border: var(--checked_input--border) solid gray;
+	border: var(--checked_input--border_width) solid gray;
 	position: relative;
 	overflow: clip;
 	margin: 0;
+	vertical-align: middle;
 
 	&::before {
 		--checked_input--scale: 0;
-		--checked_input--offset: 50%;
+		--checked_input--offset_x: 50%;
 		--checked_input--offset_y: calc(
-			var(--checked_input--offset) - (var(--checked_input--scale) * var(--checked_input--border))
+			var(--checked_input--offset_x) -
+				(var(--checked_input--scale) * var(--checked_input--border_width))
 		);
 
 		display: block;
 		position: absolute;
 		right: 50%;
 		bottom: 50%;
-		transform: translate(var(--checked_input--offset), var(--checked_input--offset_y))
+		transform: translate(var(--checked_input--offset_x), var(--checked_input--offset_y))
 			scale(var(--checked_input--scale));
 		transform-origin: center;
 		transition: transform 0.3s;
@@ -29,7 +31,7 @@ input:where([type='checkbox'], [type='radio']) {
 	}
 
 	&:checked::before {
-		transform: translate(var(--checked_input--offset), var(--checked_input--offset_y))
+		transform: translate(var(--checked_input--offset_x), var(--checked_input--offset_y))
 			scale(var(--checked_input--scale));
 	}
 }
@@ -40,6 +42,7 @@ input[type='radio'] {
 	&:checked::before {
 		--checked_input--scale: 0.6;
 	}
+
 	&::before {
 		content: '⬤';
 	}
@@ -60,5 +63,40 @@ input[type='checkbox'] {
 	}
 	&:checked::before {
 		--checked_input--scale: 0.75;
+	}
+}
+
+input[type='checkbox'][switch] {
+	appearance: none;
+	position: relative;
+	display: inline-block;
+	background: red;
+	height: 22px;
+	width: 40px;
+	border-radius: 16px;
+	box-shadow: 0px 1px 3px #0003 inset;
+	transition: 0.25s linear background;
+	vertical-align: bottom;
+
+	&::before {
+		content: '';
+		display: block;
+		width: calc(var(--checked_input--dimensions) - 6px);
+		height: calc(var(--checked_input--dimensions) - 6px);
+		background: #fff;
+		border-radius: 16px;
+		position: absolute;
+		top: 50%;
+		box-shadow: 0px 1px 3px #0003;
+		transition: 0.25s linear transform;
+		transform: translate(0%, -50%);
+	}
+
+	&:checked {
+		background-color: green;
+
+		&::before {
+			transform: translate(100%, -50%);
+		}
 	}
 }

@@ -1,0 +1,8 @@
+summary::marker {
+	content: '📫';
+	font-size: 1.5em;
+}
+
+[open] summary::marker {
+	content: '📬';
+}

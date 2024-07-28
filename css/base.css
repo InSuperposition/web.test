@@ -1,5 +1,23 @@
 @import url(development/lint.css);
 @import url(html.css);
-@import url(body.css);
 @import url(h.css);
 @import url(input/mod.css);
+@import url(modal.css);
+@import url(progress.css);
+@import url(summary.css);
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+
+	&:focus-visible {
+		outline: 2px ridge #084e94a1;
+		outline-offset: 2px;
+		position: relative;
+	}
+}
+
+hr {
+	margin: 15px 0;
+	height: 2px;
+}

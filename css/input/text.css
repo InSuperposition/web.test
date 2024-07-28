@@ -11,7 +11,8 @@ input:where(
 		[type='text'],
 		[type='time'],
 		[type='url'],
-		[type='week']
+		[type='week'],
+		[list]
 	) {
 	border: var(--input--border);
 	border-radius: var(--input--border_radius);
@@ -21,14 +22,17 @@ input:where(
 }
 
 /* === -webkit shadow DOM styles === */
+
+/*
 input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button {
-	/* height: auto; */
-	/* background-color: red; */
 }
+*/
 
 /* === -moz shadow DOM styles === */
+
+/* 
 input[type='number']::-moz-number-spin-down,
 input[type='number']::-moz-number-spin-up {
-	/* background-color: red; */
 }
+*/

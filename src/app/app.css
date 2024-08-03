@@ -1,5 +1,9 @@
 @import url(layout.css);
 
+body,
+#root {
+	height: 100%;
+}
 [data-layout-content] {
 	padding: 10px 25px;
 }

@@ -1,25 +1,30 @@
-# Based.CSS
+# React + TypeScript + Vite
 
-CSS custom properties (variables) allow for declaring relationships in values.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-- calculating offsets
+Currently, two official plugins are available:
 
-## Naming conventions
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-### CSS custom properties / variables
+## Expanding the ESLint configuration
 
-the convention is inspired by B-E-M styntax
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-`--root_element_name` - a **root** element is similar to block or a component name
+- Configure the top-level `parserOptions` property like this:
 
-1. use `snake_case` for root (block), descendant elements
-   - `button_input`, `text_input`, `date_time_input`
-   - CSS attributes - `--border_radius`
-   - User-defined states like `is_visible` `has_value`
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
 
-1. `--root__***` - the `__` prefix indicates an element which is a nested descendant, pseudo element or in the shadow DOM.
-   - `--root__psuedo_element`
-
-1. `--root_element--***` - the `--` prefix indicates a state and/or CSS style attribute
-   - `--root--disabled--hover`
-   - `--root__shadow_child--border_radius`
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
